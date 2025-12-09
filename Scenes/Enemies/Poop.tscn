@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfdjops5n3x2w"]
+
+[ext_resource type="Script" uid="uid://cj5b8dinx73gh" path="res://Scenes/Scripts/en_poop.gd" id="1_2rlen"]
+[ext_resource type="Texture2D" uid="uid://cnne5yw3kcc6c" path="res://Assets/Sprite/enemies/poop.png" id="1_rcuyo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2rlen"]
+radius = 18.027756
+
+[node name="Poop" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("1_2rlen")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.10621762, 0.10621764)
+texture = ExtResource("1_rcuyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2rlen")

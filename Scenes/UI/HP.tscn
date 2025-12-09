@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cctc07pjexi43"]
+
+[ext_resource type="Texture2D" uid="uid://c644u2bgndl86" path="res://Assets/UI/Hp.png" id="1_67j50"]
+[ext_resource type="Script" uid="uid://cblmfa8fq6mgf" path="res://Scenes/Scripts/hp.gd" id="1_med8d"]
+[ext_resource type="Texture2D" uid="uid://dwwodyom06gfb" path="res://Assets/UI/hp0.png" id="3_grc0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_med8d"]
+atlas = ExtResource("1_67j50")
+region = Rect2(0, 0, 671, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grc0t"]
+atlas = ExtResource("1_67j50")
+region = Rect2(0, 155, 671, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buo3w"]
+atlas = ExtResource("1_67j50")
+region = Rect2(0, 310, 671, 155)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yhf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_med8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grc0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buo3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_grc0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hp" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_med8d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 626)
+scale = Vector2(0.17903243, 0.17903246)
+sprite_frames = SubResource("SpriteFrames_8yhf7")
+frame_progress = 0.16744593
+speed_scale = 0.0

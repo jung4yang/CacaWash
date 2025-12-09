@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://drwi2ygmpw46j"]
+
+[ext_resource type="PackedScene" uid="uid://ciwmvefgce6e1" path="res://Scenes/Player.tscn" id="1_8etcy"]
+[ext_resource type="PackedScene" uid="uid://cctc07pjexi43" path="res://Scenes/UI/HP.tscn" id="2_yprpe"]
+[ext_resource type="PackedScene" uid="uid://jj3kv5gxpvoj" path="res://Scenes/UI/Score.tscn" id="3_ybmw1"]
+[ext_resource type="PackedScene" uid="uid://bp85p5mjcvrp8" path="res://Scenes/Enemies/Oil.tscn" id="4_d4f28"]
+[ext_resource type="PackedScene" uid="uid://cfdjops5n3x2w" path="res://Scenes/Enemies/Poop.tscn" id="5_iuea6"]
+[ext_resource type="PackedScene" uid="uid://dtp8uky2j3q3s" path="res://Scenes/Enemies/Bubble.tscn" id="6_kvfik"]
+
+[sub_resource type="GDScript" id="GDScript_yprpe"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8etcy")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_yprpe")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hp" parent="UI/Control/VBoxContainer" instance=ExtResource("2_yprpe")]
+layout_mode = 2
+
+[node name="Score" parent="UI/Control/VBoxContainer" instance=ExtResource("3_ybmw1")]
+layout_mode = 2
+
+[node name="Oil" parent="." groups=["enemy"] instance=ExtResource("4_d4f28")]
+position = Vector2(195, 183)
+
+[node name="Oil2" parent="." groups=["enemy"] instance=ExtResource("4_d4f28")]
+position = Vector2(91, 64)
+
+[node name="Poop" parent="." groups=["enemy"] instance=ExtResource("5_iuea6")]
+position = Vector2(54, 130)
+
+[node name="Poop2" parent="." groups=["enemy"] instance=ExtResource("5_iuea6")]
+position = Vector2(288, 202)
+
+[node name="Bubble" parent="." groups=["enemy"] instance=ExtResource("6_kvfik")]
+position = Vector2(308, 103)
+
+[node name="Bubble2" parent="." groups=["enemy"] instance=ExtResource("6_kvfik")]
+position = Vector2(119, 190)

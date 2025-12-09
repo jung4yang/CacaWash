@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://6d240oftb0rn"]
+
+[ext_resource type="Script" uid="uid://clytfbjjai4lm" path="res://Scenes/Scripts/at_bubble.gd" id="1_3orvq"]
+[ext_resource type="Texture2D" uid="uid://dq80dkksur0cm" path="res://Assets/Sprite/enemies/bubble2.png" id="1_bun31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bun31"]
+
+[node name="AtBubble" type="Area2D"]
+script = ExtResource("1_3orvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bun31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12393162, 0.123931624)
+texture = ExtResource("1_bun31")

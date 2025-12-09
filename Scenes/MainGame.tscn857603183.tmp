@@ -1,0 +1,182 @@
+[gd_scene load_steps=35 format=3 uid="uid://drwi2ygmpw46j"]
+
+[ext_resource type="PackedScene" uid="uid://ciwmvefgce6e1" path="res://Scenes/Player.tscn" id="1_8etcy"]
+[ext_resource type="PackedScene" uid="uid://cctc07pjexi43" path="res://Scenes/UI/HP.tscn" id="2_yprpe"]
+[ext_resource type="PackedScene" uid="uid://jj3kv5gxpvoj" path="res://Scenes/UI/Score.tscn" id="3_ybmw1"]
+[ext_resource type="Script" uid="uid://doigwf14if1nl" path="res://Scenes/Scripts/backgrounds.gd" id="4_d4f28"]
+[ext_resource type="Script" uid="uid://gdv5op5xcwju" path="res://Scenes/Scripts/StageManager.gd" id="4_ybmw1"]
+[ext_resource type="Texture2D" uid="uid://d2l7fsmpbbq34" path="res://Assets/Sprite/background/CAR_1.png" id="5_3bmkb"]
+[ext_resource type="Script" uid="uid://dbi8nr3deuucx" path="res://Scenes/Scripts/enemy_spawner.gd" id="5_321ql"]
+[ext_resource type="Texture2D" uid="uid://dajims7wlpcyx" path="res://Assets/Sprite/background/SEDAN_1.png" id="5_k6vqf"]
+[ext_resource type="Texture2D" uid="uid://dihcus8oo7oq6" path="res://Assets/Sprite/background/CAR_2.png" id="6_48eim"]
+[ext_resource type="Texture2D" uid="uid://b7ckmk4kuo651" path="res://Assets/Sprite/background/SEDAN_2.png" id="6_ev6kq"]
+[ext_resource type="Texture2D" uid="uid://blky7k41wsm01" path="res://Assets/Sprite/background/CAR_3.png" id="7_73a8k"]
+[ext_resource type="Texture2D" uid="uid://bfmi58rpwt5v1" path="res://Assets/Sprite/background/SEDAN_3.png" id="7_jn25s"]
+[ext_resource type="Texture2D" uid="uid://dy4prma7qfq67" path="res://Assets/Sprite/background/TRUCK_1.png" id="8_glaac"]
+[ext_resource type="Texture2D" uid="uid://1bjs4umji4nh" path="res://Assets/Sprite/background/TRUCK_2.png" id="9_7p2u3"]
+[ext_resource type="Texture2D" uid="uid://c66ulgem0h1hw" path="res://Assets/Sprite/background/TRUCK_3.png" id="10_him8o"]
+[ext_resource type="Texture2D" uid="uid://bpseca455pv4a" path="res://Assets/Sprite/background/BUS_1.png" id="11_fgk2h"]
+[ext_resource type="Texture2D" uid="uid://dmla7mis4d3kr" path="res://Assets/Sprite/background/BUS_2.png" id="12_wn26v"]
+[ext_resource type="Texture2D" uid="uid://won7g7riyj1j" path="res://Assets/Sprite/background/BUS_3.png" id="13_cmrup"]
+[ext_resource type="Texture2D" uid="uid://sfexirpl10im" path="res://Assets/Sprite/background/BUS_4.png" id="14_im1vy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8sds"]
+atlas = ExtResource("5_3bmkb")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr2pg"]
+atlas = ExtResource("6_48eim")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylpyt"]
+atlas = ExtResource("7_73a8k")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy0n7"]
+atlas = ExtResource("5_k6vqf")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wdc3"]
+atlas = ExtResource("6_ev6kq")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w42fa"]
+atlas = ExtResource("7_jn25s")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upseh"]
+atlas = ExtResource("8_glaac")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si6xw"]
+atlas = ExtResource("9_7p2u3")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r7st"]
+atlas = ExtResource("10_him8o")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6tew"]
+atlas = ExtResource("11_fgk2h")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ijh3"]
+atlas = ExtResource("12_wn26v")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fto8l"]
+atlas = ExtResource("13_cmrup")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gskau"]
+atlas = ExtResource("14_im1vy")
+region = Rect2(0, 0, 832, 1248)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyocf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8sds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr2pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylpyt")
+}],
+"loop": true,
+"name": &"stage1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy0n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wdc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w42fa")
+}],
+"loop": true,
+"name": &"stage2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upseh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si6xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r7st")
+}],
+"loop": true,
+"name": &"stage3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6tew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ijh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fto8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gskau")
+}],
+"loop": true,
+"name": &"stage4",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_yprpe"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Backgrounds" type="Node2D" parent="."]
+script = ExtResource("4_d4f28")
+
+[node name="Background_Texture" type="TextureRect" parent="Backgrounds"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Backgrounds"]
+position = Vector2(188.00002, 324.00003)
+scale = Vector2(0.51322114, 0.51322114)
+sprite_frames = SubResource("SpriteFrames_wyocf")
+animation = &"stage4"
+
+[node name="Timer" type="Timer" parent="Backgrounds"]
+
+[node name="Player" parent="." instance=ExtResource("1_8etcy")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_yprpe")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hp" parent="UI/Control/VBoxContainer" instance=ExtResource("2_yprpe")]
+layout_mode = 2
+
+[node name="Score" parent="UI/Control/VBoxContainer" instance=ExtResource("3_ybmw1")]
+layout_mode = 2
+
+[node name="StageManager" type="Node2D" parent="."]
+script = ExtResource("4_ybmw1")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("5_321ql")

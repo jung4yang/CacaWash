@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtp8uky2j3q3s"]
+
+[ext_resource type="Texture2D" uid="uid://c0s1g6e5kk6oh" path="res://Assets/Sprite/enemies/bubble.png" id="1_61a4a"]
+[ext_resource type="Script" uid="uid://b84umaeay74jr" path="res://Scenes/Scripts/en_bubble.gd" id="1_hsdet"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsdet"]
+radius = 21.023796
+
+[node name="Bubble" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+script = ExtResource("1_hsdet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.10648151, 0.10648151)
+texture = ExtResource("1_61a4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hsdet")

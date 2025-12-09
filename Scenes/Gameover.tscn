@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhlivcvbagf1b"]
+
+[ext_resource type="Texture2D" uid="uid://dbwtby55j1sbk" path="res://Assets/UI/Title_BG.png" id="1_74quc"]
+[ext_resource type="Script" uid="uid://dmpj6heekqsy7" path="res://Scenes/Scripts/gameover.gd" id="1_gu267"]
+[ext_resource type="Texture2D" uid="uid://dgcpodoelm08a" path="res://Assets/UI/Gameover.png" id="2_gu267"]
+[ext_resource type="Texture2D" uid="uid://b0bc1kwl53mae" path="res://Assets/UI/RestartB_n.png" id="3_3isfb"]
+[ext_resource type="Script" uid="uid://b3fwfnitmg16k" path="res://Scenes/Scripts/gameover_title.gd" id="4_3isfb"]
+[ext_resource type="Texture2D" uid="uid://cv7mikbt5thd5" path="res://Assets/UI/RestartB_p.png" id="4_cuxvi"]
+[ext_resource type="Texture2D" uid="uid://cs2tjhbr7h0ci" path="res://Assets/UI/RestartB_h.png" id="5_6r5r3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4q5c"]
+texture = ExtResource("1_74quc")
+modulate_color = Color(0.8392157, 0.8392157, 0.8392157, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q113s"]
+texture = ExtResource("3_3isfb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3aqs6"]
+texture = ExtResource("4_cuxvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1q1lc"]
+texture = ExtResource("5_6r5r3")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brulj"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gu267")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 367.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_t4q5c")
+
+[node name="gameover_title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 334.0
+offset_bottom = 521.0
+texture = ExtResource("2_gu267")
+expand_mode = 1
+script = ExtResource("4_3isfb")
+flash_color = Color(1.3801756, 0.44344974, 0.9326481, 0.84705883)
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 344.0
+offset_right = 270.0
+offset_bottom = 438.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_q113s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3aqs6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1q1lc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_brulj")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
